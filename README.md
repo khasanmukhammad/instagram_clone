@@ -178,10 +178,6 @@ The following variables are required:
 - EMAIL_HOST_USER
 - EMAIL_HOST_PASSWORD
 
-## Future Improvements
-
-- Search users
-- Image upload optimization
 
 ## License
 
