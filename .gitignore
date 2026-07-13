@@ -168,8 +168,6 @@ cython_debug/
 # PyCharm
 .idea/
 
-# Django media
-media/
 
 # Collected static files
 staticfiles/
