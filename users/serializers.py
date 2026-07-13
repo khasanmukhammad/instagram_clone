@@ -210,7 +210,7 @@ class LoginSerializer(TokenObtainPairSerializer):
         else:
             data={
                 "success": True,
-                "message": "You must send email, username or phone number."
+                "message": "You must enter email, username or phone number."
             }
             raise ValidationError(data)
 
@@ -239,7 +239,7 @@ class LoginSerializer(TokenObtainPairSerializer):
     def validate(self, data):
         self.auth_validate(data)
         if self.user.auth_status not in [DONE, PHOTO_DONE]:
-            raise PermissionDenied("Siz login qila olmaysiz. Ruxsatingiz yoq")
+            raise PermissionDenied("You can not login. Permission denied")
         data = self.user.token()
         data['auth_status'] = self.user.auth_status
         data['full_name'] = self.user.full_name
@@ -250,7 +250,7 @@ class LoginSerializer(TokenObtainPairSerializer):
         if not users.exists():
             raise ValidationError(
                 {
-                    "message": "No active account found"
+                    "message": "Active account not found"
                 }
             )
         return users.first()

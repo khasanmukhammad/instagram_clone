@@ -30,7 +30,7 @@ class Migration(migrations.Migration):
             field=models.ImageField(
                 blank=True,
                 null=True,
-                upload_to="users/photos",
+                upload_to="media/user_photos",
                 validators=[
                     django.core.validators.FileExtensionValidator(
                         allowed_extensions=["png", "jpg", "jpeg", "heic", "heif"]

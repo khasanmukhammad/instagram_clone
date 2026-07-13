@@ -37,7 +37,7 @@ class User(AbstractUser, BaseModel):
     auth_status= models.CharField(max_length=31, choices=AUTH_STATUS, default=NEW)
     email = models.EmailField(null=True, blank=True, unique=True)
     phone_number = models.CharField(max_length=20, null=True, blank=True, unique=True)
-    photo = models.ImageField(null=True, blank=True, upload_to="users/photos",
+    photo = models.ImageField(null=True, blank=True, upload_to="media/user_photos",
                               validators=[FileExtensionValidator(allowed_extensions=["png", "jpg", "jpeg", "heic", "heif"])])
 
     def __str__(self):

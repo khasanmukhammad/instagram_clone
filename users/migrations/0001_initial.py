@@ -142,7 +142,7 @@ class Migration(migrations.Migration):
                 ),
                 (
                     "photo",
-                    models.ImageField(blank=True, null=True, upload_to="users/photos"),
+                    models.ImageField(blank=True, null=True, upload_to="media/user_photos"),
                 ),
                 (
                     "groups",
